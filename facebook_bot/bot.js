@@ -1,6 +1,6 @@
 "use strict";
 var SimpleFilter = require("./bot_filter/simpleFilter");
-
+var SpamFilter = require("./bot_filter/spamFilter");
 var CategoryFilter = require("./bot_filter/categoryFilter");
 var SearchFilter = require("./bot_filter/searchFilter");
 var YoutubeFilter = require("./bot_filter/youtubeFilter");
@@ -125,6 +125,26 @@ var crushFilter = new SimpleFilter([
 ],
 "Suỵt! Gợi ý nèk <3 Hack facebook anh ý <3 Tìm mess chị Nấm <3");
 
+var namFilter = new SimpleFilter(["Nam la ai", "Nấm là ai"
+],
+"Là bạn Khánh Linh chăng <3 =) =)))");
+var crushthanhanFilter = new SimpleFilter(["Crush Thanh An la ai", "Crush Thành An là ai", "Crush của Thành An là ai",
+"Crush cua Thanh An la ai", "Crush của Thanh An a3 la ai", "Crush cua Thành An a3 là ai",
+"Crush cua Thanh An la ai", "Crush của Thanh An 9a3 la ai", "Crush cua Thành An 9a3 là ai",
+"Crs Thanh An la ai", "Crs Thành An là ai", "Crs của Thành An là ai",
+"Crs cua Thanh An la ai", "Crs của Thanh An a3 la ai", "Crs cua Thành An a3 là ai",
+"Crs cua Thanh An la ai", "Crs của Thanh An 9a3 la ai", "Crs cua Thành An 9a3 là ai"
+],
+"Dạ! Bạn Mỹ Hânn chăng <3 =)))");
+var crushDucAnFilter = new SimpleFilter(["Crush Duc An la ai", "Crush Đức An là ai", "Crush của Đức An là ai",
+"Crush cua Duc An la ai", "Crush của Duc An a3 la ai", "Crush cua Đức An a3 là ai",
+"Crush cua Duc An la ai", "Crush của Duc An 9a3 la ai", "Crush cua Đức An 9a3 là ai",
+"Crs Duc An la ai", "Crs Đức An là ai", "Crs của Đức An là ai",
+"Crs cua Duc An la ai", "Crs của Duc An a3 la ai", "Crs cua Đức An a3 là ai",
+"Crs cua Duc An la ai", "Crs của Duc An 9a3 la ai", "Crs cua Đức An 9a3 là ai"
+],
+"Bạn nào đó a1 :))). Inb với admin để biết :))) <3");
+
  var adInfoFilter = new SimpleFilter(["ad la ai", "hoi ve ad", "ad ten gi", "who is ad",
                 "ad la thang nao", "thong tin ve ad", "ad dau", "admin",
                 "ai viet ra may", "who made you", "ad la gi", "ad ten la gi", "thang nao tao ra may", "thang nao tao ra may",
@@ -146,9 +166,10 @@ var crushFilter = new SimpleFilter([
         this._goodbyeFilter = new SimpleFilter(["tạm biệt", "bye", "bai bai", "good bye"], "Tạm biệt, hẹn gặp lại ;)");
 		
 
-          this._filters = [            new SearchFilter(), new CategoryFilter(), youtubeFilter,
+          this._filters = [new SpamFilter(),
+            new SearchFilter(), new CategoryFilter(), youtubeFilter,
             girlFilter, sexyGirlFilter, bikiniGirlFilter,
-            adInfoFilter, botInfoFilter, yeunuocFilter, tienFilter, giubimatFilter, thoaFilter, soloFilter, yeutaokFilter, chuongFilter, taokhongvaoFilter, CrushKhanhFilter, crushHaiFilter, ChatbotDzFilter, crushFilter,
+            adInfoFilter, botInfoFilter, yeunuocFilter, tienFilter, giubimatFilter, thoaFilter, soloFilter, yeutaokFilter, chuongFilter, taokhongvaoFilter, CrushKhanhFilter, crushHaiFilter, ChatbotDzFilter, crushFilter, namFilter, crushthanhanFilter, crushDucAnFilter,
             chuiLonFilter, thankyouFilter, helpFilter,
             this._goodbyeFilter, this._helloFilter, testFilter, new EndFilter(),
         ];
