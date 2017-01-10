@@ -143,7 +143,7 @@ var crushDucAnFilter = new SimpleFilter(["Crush Duc An la ai", "Crush Đức An 
 "Crs cua Duc An la ai", "Crs của Duc An a3 la ai", "Crs cua Đức An a3 là ai",
 "Crs cua Duc An la ai", "Crs của Duc An 9a3 la ai", "Crs cua Đức An 9a3 là ai"
 ],
-"Bạn nào đó a1 :))). Inb với admin để biết :))) <3");
+"Bạn nào đó a1 :))). Hình như bạn Khanh chăng :v :))) <3");
 
  var adInfoFilter = new SimpleFilter(["ad la ai", "hoi ve ad", "ad ten gi", "who is ad",
                 "ad la thang nao", "thong tin ve ad", "ad dau", "admin",
