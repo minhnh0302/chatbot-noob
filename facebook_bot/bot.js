@@ -26,7 +26,7 @@ class BotAsync {
 
         
 
-       this._helloFilter = new SimpleFilter(["hi", "halo", "hế lo", "hello", "chào", "xin chào"], "Chào bạn, mềnh là bot Noob: <3 Bạn cần giúp gì nào ?");
+       this._helloFilter = new ButtonFilter(["hi", "halo", "hế lo", "hello", "chào", "xin chào"], "Chào bạn, mềnh là bot Noob: <3 Bạn cần giúp gì nào ?");
         var girlFilter = new ImageFilter(["@gái", "@girl", "hình gái", "anh gai", "cute girl"], girlAPI.getRandomGirlImage.bind(girlAPI)); // From xkcn.info
         var sexyGirlFilter = new ImageFilter(["@sexy", "sexy", "fap", "anh nong", "hot girl", "hinh sexy", "gai sexy", "sexy girl"],
             girlAPI.getRandomSexyImage.bind(girlAPI, "637434912950811", 760)); // From xinh nhẹ nhàng 
@@ -127,6 +127,7 @@ var crushFilter = new SimpleFilter([
 var namFilter = new SimpleFilter(["Nam la ai", "Nấm là ai"
 ],
 "Là bạn Khánh Linh chăng <3 =) =)))");
+var CrushCuocFilter = new SimpleFilter (["Crush Cuốc là ai", "Crush của Cuốc là ai"], "Nó crush ad Nguyễn Hoàng Minh :v :)))");
 var bosscfsFilter = new SimpleFilter(["Boss của Tộ team Cfs là ai"
 ],
 "Boss Quân :|");
@@ -142,7 +143,7 @@ var QueFilter = new SimpleFilter(["Nguyễn Khánh Nam là ai", "Què là ai"
 var CuocFilter = new SimpleFilter (["Cuốc là ai"
 ],
 "Mặt nó ngu vãi cả lồn nhưng đéo hiêu sao được giải nhất Hóa =)) Dâm vc :v Còn bị gay nữa :v");
-var CrushCuocFilter = new SimpleFilter (["Crush Cuốc là ai", "Crush của Cuốc là ai"], "Nó crush ad Nguyễn Hoàng Minh :v :)))");
+
 var crushthanhanFilter = new SimpleFilter(["Crush Thanh An la ai", "Crush Thành An là ai", "Crush của Thành An là ai",
 "Crush cua Thanh An la ai", "Crush của Thanh An a3 la ai", "Crush cua Thành An a3 là ai",
 "Crush cua Thanh An la ai", "Crush của Thanh An 9a3 la ai", "Crush cua Thành An 9a3 là ai",
@@ -183,11 +184,11 @@ var crushDucAnFilter = new SimpleFilter(["Crush Duc An la ai", "Crush Đức An 
 
           this._filters = [new SpamFilter(),
             new SearchFilter(), new CategoryFilter(), youtubeFilter,
-            girlFilter, sexyGirlFilter, bikiniGirlFilter,
+            girlFilter, sexyGirlFilter, bikiniGirlFilter, CrushCuocFilter,
             adInfoFilter, botInfoFilter, yeunuocFilter, tienFilter,
 			giubimatFilter, thoaFilter, soloFilter, yeutaokFilter, chuongFilter,
 			taokhongvaoFilter, CrushKhanhFilter, crushHaiFilter, ChatbotDzFilter, crushFilter,
-			namFilter, crushthanhanFilter, crushDucAnFilter, bosscfsFilter, PNKFilter, NKLFilter, QueFilter, CuocFilter, CrushCuocFilter,
+			namFilter, crushthanhanFilter, crushDucAnFilter, bosscfsFilter, PNKFilter, NKLFilter, QueFilter, CuocFilter,
             chuiLonFilter, thankyouFilter, helpFilter,
             this._goodbyeFilter, this._helloFilter, testFilter, new EndFilter(),
         ];
