@@ -4,8 +4,8 @@ var atob = require("atob");
 
 class FacebookAPI {
     constructor() {
-        this._token = process.env.FB_TOKEN ||
-            atob("RUFBV2phSmRjejE0QkFMVzR4OXIxM2FLY3daQVRKODRxVkFOekloNG5QNEpuNUdRM1lGSmV2cVpDbXRYTGMyN0FjbktIbkI3dk9LaWJ4WEIzbGx4dXZoSEUxYTkyRFpBbEpOaFpDMFNRZWRtWkNqZ3VVeWtDWFpBWkFtTFdBNHB3dDZicFFBRVJhMm5RZjJaQmVCbWFVUEJhWkJubkUwNFJEcHRxQzFCTHJiN21zQXdaRFpE");
+        this._token = process.env.FB_TOKEN || 
+        atob("RUFBT1dHdmprNm1JQkFGVUtKM3l2a3dZcmt1MTRaQWNkRFlBcmtwa0JrelpBc1NwM29PQllFcjVnNlpBMW1LSjBmOTRaQmNaQ083UzhaQ1VJaHY2SXpwRWN3V1JMbFg5OGdIRHV5ekx1eHNiWHE5a2VUQkp1ckpxT09LSlZ4VlRQc0M1YndaQW1iWkJEbldGY1BVNEtZVFpDRzRXUDRTa0UyRjZmeGdYdExBbHF5T0FaRFpE");
         this._storedUsers = {};
     }
 
@@ -119,38 +119,8 @@ class FacebookAPI {
         });
     }
 
-    sendImage(senderId, imageUrl) {
-        var messageData = {
-            attachment: {
-                type: "image",
-                payload: {
-                    url: imageUrl
-                }
-            }
-        };
-        request({
-            url: 'https://graph.facebook.com/v2.6/me/messages',
-            qs: {
-                access_token: this._token
-            },
-            method: 'POST',
-            json: {
-                recipient: {
-                    id: senderId
-                },
-                message: messageData,
-            }
-        }, function(error, response, body) {
-            if (error) {
-                console.log('Error sending message: ', error);
-            }
-            else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-            }
-        });
-    }
+    sendGenericMessage(senderId, posts) {
 
-    sendGenericMessage(senderId, payloadElements) {
         var messageData = {
             "attachment": {
                 "type": "template",
@@ -161,7 +131,21 @@ class FacebookAPI {
             }
         };
 
-        messageData.attachment.payload.elements = payloadElements;
+        var messageElements = posts.map(post => {
+            return {
+                title: "Article",
+                subtitle: post.title,
+                item_url: post.URL,
+                image_url: post.featured_image,
+                buttons: [{
+                    type: "web_url",
+                    url: post.URL,
+                    title: "Read this"
+                }]
+            }
+        });
+
+        messageData.attachment.payload.elements = messageElements;
         request({
             url: 'https://graph.facebook.com/v2.6/me/messages',
             qs: {
