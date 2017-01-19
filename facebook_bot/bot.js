@@ -122,11 +122,7 @@ var crushFilter = new SimpleFilter([
 "Crush cua Hoang Minh a3 la ai", "Crush Hoang Minh a3 la ai", "Crs cua Hoang Minh a3 la ai", "Crs Hoang Minh a3 la ai",
 "Crush cua Hoang Minh 9a3 la ai", "Crush Hoang Minh 9a3 la ai", "Crs cua Hoang Minh 9a3 la ai", "Crs Hoang Minh 9a3 la ai"
 ],
-"Suỵt! Gợi ý nèk <3 Hack facebook anh ý <3 Tìm mess chị Nấm <3");
-
-var namFilter = new SimpleFilter(["Nam la ai", "Nấm là ai"
-],
-"Là bạn Khánh Linh chăng <3 =) =)))");
+"Suỵt! Gợi ý nèk <3 Hack facebook anh ý <3 Tìm mess chị Nấm <3");		
 var CrushCuocFilter = new SimpleFilter (["Crush Cuốc là ai", "Crush của Cuốc là ai"], "Nó crush ad Nguyễn Hoàng Minh :v :)))");
 var bosscfsFilter = new SimpleFilter(["Boss của Tộ team Cfs là ai"
 ],
