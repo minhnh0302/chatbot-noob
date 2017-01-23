@@ -184,7 +184,7 @@ var crushDucAnFilter = new SimpleFilter(["Crush Duc An la ai", "Crush Đức An 
             adInfoFilter, botInfoFilter, yeunuocFilter, tienFilter,
 			giubimatFilter, thoaFilter, soloFilter, yeutaokFilter, chuongFilter,
 			taokhongvaoFilter, CrushKhanhFilter, crushHaiFilter, ChatbotDzFilter, crushFilter,
-			namFilter, crushthanhanFilter, crushDucAnFilter, bosscfsFilter, PNKFilter, NKLFilter, QueFilter, CuocFilter,
+			 crushthanhanFilter, crushDucAnFilter, bosscfsFilter, PNKFilter, NKLFilter, QueFilter, CuocFilter,
             chuiLonFilter, thankyouFilter, helpFilter,
             this._goodbyeFilter, this._helloFilter, testFilter, new EndFilter(),
         ];
